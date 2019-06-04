@@ -1,0 +1,144 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		84D41A3522A71F9400B9C9B8 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		84D41A3622A71F9400B9C9B8 /* fizzbuzz.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fizzbuzz.c; sourceTree = "<group>"; };
+		84D41A3722A71F9400B9C9B8 /* tests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tests; sourceTree = "<group>"; };
+		84D41A3822A71F9400B9C9B8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		84D41A3922A71F9400B9C9B8 /* fizzbuzz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fizzbuzz.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		84D41A2F22A71F9400B9C9B8 = {
+			isa = PBXGroup;
+			children = (
+				84D41A3522A71F9400B9C9B8 /* Makefile */,
+				84D41A3622A71F9400B9C9B8 /* fizzbuzz.c */,
+				84D41A3722A71F9400B9C9B8 /* tests */,
+				84D41A3822A71F9400B9C9B8 /* README.md */,
+				84D41A3922A71F9400B9C9B8 /* fizzbuzz.h */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		84D41A3422A71F9400B9C9B8 /* fizzbuzz */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 84D41A3A22A71F9400B9C9B8 /* Build configuration list for PBXLegacyTarget "fizzbuzz" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "/Users/audreywelch/Dropbox/Lambda School/Computer_Science/Sprint_06_C/Projects_6/Intro-to-C/fizzbuzz";
+			dependencies = (
+			);
+			name = fizzbuzz;
+			passBuildSettingsInEnvironment = 1;
+			productName = fizzbuzz;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		84D41A3022A71F9400B9C9B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 84D41A3322A71F9400B9C9B8 /* Build configuration list for PBXProject "fizzbuzz" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84D41A2F22A71F9400B9C9B8;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84D41A3422A71F9400B9C9B8 /* fizzbuzz */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		84D41A3122A71F9400B9C9B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		84D41A3222A71F9400B9C9B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		84D41A3B22A71F9400B9C9B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = fizzbuzz;
+			};
+			name = Debug;
+		};
+		84D41A3C22A71F9400B9C9B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = fizzbuzz;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84D41A3322A71F9400B9C9B8 /* Build configuration list for PBXProject "fizzbuzz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D41A3122A71F9400B9C9B8 /* Debug */,
+				84D41A3222A71F9400B9C9B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D41A3A22A71F9400B9C9B8 /* Build configuration list for PBXLegacyTarget "fizzbuzz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D41A3B22A71F9400B9C9B8 /* Debug */,
+				84D41A3C22A71F9400B9C9B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84D41A3022A71F9400B9C9B8 /* Project object */;
+}
