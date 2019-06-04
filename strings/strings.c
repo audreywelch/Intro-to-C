@@ -9,7 +9,12 @@
 */
 int string_length(char *s)
 {
+    int length;
 
+    for(length = 0; s[length] != '\0'; ++length);
+    printf("Length of string: %d\n", length);
+
+    return length;
 }
 
 /*
