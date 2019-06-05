@@ -15,11 +15,16 @@
 */
 void string_copy(char *x, char *y)
 {
+    // while pointer y points to something
     while(*y) {
+        // set x's pointer to be the character at y's pointer
         *x = *y;
+        // increment x by 1
         x++;
+        // increment y by 1
         y++;
     }
+    // set x's pointer, which is now at the space after final character to 0
     *x = '\0';
 }
 
@@ -33,7 +38,18 @@ void string_copy(char *x, char *y)
 */
 char *find_char(char *str, char c)
 {
-
+    // While the string is not at the end of the array
+    while (*str != '\0') {
+        // if the pointer to the string is equal to c
+        if (*str == c) {
+            // return and print it
+            printf("%s\n", str);
+            return str;
+        }
+        // Increment the string by one
+        str++;
+    }
+    return NULL;
 }
 
 /*
@@ -46,7 +62,30 @@ char *find_char(char *str, char c)
 */
 char *find_string(char *haystack, char *needle)
 {
+    // While the haystack pointer exists
+    while(*haystack) {
+        // Set a pointer that points to the beginning of the haystack
+        char *begin = haystack;
+        // Set the pointer that points to the inside of the needle
+        char *inside = needle;
 
+        // While the haystack pointer and the inside pointer are equal to the inside pointer
+        while (*haystack && *inside && *haystack == *inside) {
+            // Look at the next character by incrementing both
+            haystack++;
+            inside++;
+        }
+        
+        // If the inside pointer is at the end
+        if (!*inside) {
+            // return what we have so far
+            return begin;
+        }
+
+        // Set the haystack to one after the beginning
+        haystack = begin + 1;
+    }
+    return NULL;
 }
 
 #ifndef TESTING
