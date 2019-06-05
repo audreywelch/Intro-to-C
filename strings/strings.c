@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// gcc -Wall -Wextra -o hello hello.c
+// ./hello
+
 /*
     Given a character array s (as a pointer), return the number of 
     characters in the string.
@@ -25,6 +28,37 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
+    // while the new array is less than the given array
+    // while (rv < s) {
+    //     char temporary = *rv;
+    //     *rv-- = *s;
+    //     *s++ = temporary;
+    // }
+    // printf("%s", s);
+    // return s;
+
+    int beginning = 0;
+    int ending = 0;
+    int length = 0;
+    //int length = string_length(s);
+
+    while (s[length] != '\0') {
+        length++;
+    }
+
+    ending = length - 1;
+
+    for (beginning = 0; beginning < length; beginning++) {
+        rv[beginning] = s[ending];
+        ending--;
+
+    }
+
+    rv[beginning] = '0';
+
+    printf("%s\n", rv);
+
+    return 0;
 
 }
 
