@@ -10,8 +10,34 @@
     You may want to use the string_length function to figure out the
     length of the input string.
 */
+
+int string_length(char *s)
+{
+    return strlen(s);
+}
+
 char *string_dup(char *src)
 {
+    // Get the length of the string
+    int length = string_length(src);
+
+    // Allocate enough memory for the new duplicated string
+    char *duplicated_string = malloc(length + 1);
+
+    // Set the value of the first character pointer to the duplicate
+    char *starting_char = duplicated_string;
+
+    // While the value in src exists
+    while(*src) {
+        // Set value of duplicated string's first space to value of src's first space
+        *duplicated_string = *src;
+        // Increment both strings
+        src++;
+        duplicated_string++;
+    }
+    // Mark the ending of the string
+    *duplicated_string = '\0';
+    return starting_char;
 
 }
 
