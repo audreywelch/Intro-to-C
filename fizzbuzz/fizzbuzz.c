@@ -22,7 +22,6 @@ int fizzbuzz(int n)
             printf("Buzz\n");
         } else {
             counter += 1;
-            //printf("%d\n", i);
         }
     }
     //printf("%d\n", counter);

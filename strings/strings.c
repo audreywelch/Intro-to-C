@@ -14,8 +14,12 @@ int string_length(char *s)
 {
     int length;
 
-    for(length = 0; s[length] != '\0'; ++length);
-    printf("Length of string: %d\n", length);
+    // for(length = 0; s[length] != '\0'; ++length);
+    // printf("Length of string: %d\n", length);
+
+    while (*(s + length) != '\0') {
+        length++;
+    }
 
     return length;
 }
@@ -28,38 +32,29 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
-    // while the new array is less than the given array
-    // while (rv < s) {
-    //     char temporary = *rv;
-    //     *rv-- = *s;
-    //     *s++ = temporary;
-    // }
-    // printf("%s", s);
-    // return s;
+    // set the count to the length of the string
+    int count = string_length(s);
+    int i = 0;
 
-    int beginning = 0;
-    int ending = 0;
-    int length = 0;
-    //int length = string_length(s);
+    // while the count is still greater than 1
+    while (count >= 1) {
 
-    while (s[length] != '\0') {
-        length++;
+        // decrement the counter by 1
+        count--;
+
+        // the pointer in rv points to the first character,
+        // Set it equal to the pointer of the original string + the count
+        // Since it has been decremented, it won't include the last item, which is the 0
+        // and it will be the last actual character in the array
+        *(rv + i) = *(s + count);
+
+        // increment i by 1
+        i++;
     }
-
-    ending = length - 1;
-
-    for (beginning = 0; beginning < length; beginning++) {
-        rv[beginning] = s[ending];
-        ending--;
-
-    }
-
-    rv[beginning] = '0';
-
+    // Set the last element to 0 to signal that it is the end of the array
+    *(rv + i) = '\0';
     printf("%s\n", rv);
-
-    return 0;
-
+    return rv;
 }
 
 #ifndef TESTING
