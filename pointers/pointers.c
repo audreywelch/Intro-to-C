@@ -15,7 +15,12 @@
 */
 void string_copy(char *x, char *y)
 {
-
+    while(*y) {
+        *x = *y;
+        x++;
+        y++;
+    }
+    *x = '\0';
 }
 
 /*
