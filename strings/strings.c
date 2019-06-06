@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// gcc -Wall -Wextra -o hello hello.c
+// ./hello
+
 /*
     Given a character array s (as a pointer), return the number of 
     characters in the string.
@@ -9,7 +12,16 @@
 */
 int string_length(char *s)
 {
+    int length;
 
+    // for(length = 0; s[length] != '\0'; ++length);
+    // printf("Length of string: %d\n", length);
+
+    while (*(s + length) != '\0') {
+        length++;
+    }
+
+    return length;
 }
 
 /*
@@ -20,7 +32,29 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
+    // set the count to the length of the string
+    int count = string_length(s);
+    int i = 0;
 
+    // while the count is still greater than 1
+    while (count >= 1) {
+
+        // decrement the counter by 1
+        count--;
+
+        // the pointer in rv points to the first character,
+        // Set it equal to the pointer of the original string + the count
+        // Since it has been decremented, it won't include the last item, which is the 0
+        // and it will be the last actual character in the array
+        *(rv + i) = *(s + count);
+
+        // increment i by 1
+        i++;
+    }
+    // Set the last element to 0 to signal that it is the end of the array
+    *(rv + i) = '\0';
+    printf("%s\n", rv);
+    return rv;
 }
 
 #ifndef TESTING

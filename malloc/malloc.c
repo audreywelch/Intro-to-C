@@ -10,8 +10,39 @@
     You may want to use the string_length function to figure out the
     length of the input string.
 */
+
+int string_length(char *s)
+{
+    return strlen(s);
+}
+
 char *string_dup(char *src)
 {
+    // Get the length of the string
+    int length = string_length(src);
+
+    // Allocate enough memory for the new duplicated string
+    char *duplicated_string = malloc(length + 1);
+
+    // Another possibility:
+    // for (int i = 0; i < length; i++) {
+        // *(duplicated_string + i) = *(src + i)
+    // }
+
+    // Set the value of the first character pointer to the duplicate
+    char *starting_char = duplicated_string;
+
+    // While the value in src exists
+    while(*src) {
+        // Set value of duplicated string's first space to value of src's first space
+        *duplicated_string = *src;
+        // Increment both strings
+        src++;
+        duplicated_string++;
+    }
+    // Mark the ending of the string
+    *duplicated_string = '\0';
+    return starting_char;
 
 }
 
@@ -24,7 +55,14 @@ char *string_dup(char *src)
 */
 void mem_copy(void *dest, const void *src, int n)
 {
-
+    // Explicitly cast the input pointers to char pointers
+    char *cast_dest = (char *) dest;
+    char *cast_src = (char *) src;
+    
+    // Copy the contents from the source to the destination
+    for (int i = 0; i < n; i++) {
+        *(cast_dest + i) = *(cast_src + i);
+    }
 }
 
 /*
@@ -40,7 +78,30 @@ void mem_copy(void *dest, const void *src, int n)
 */
 void *resize_memory(void *ptr, int old_size, int new_size)
 {
+    if (new_size == 0) {
+        free(ptr);
+        return NULL;
+    }
 
+    else if (!ptr) {
+        return malloc(new_size);
+    }
+
+    else if (old_size == new_size) {
+        return ptr;
+    }
+
+    void *new_block = malloc(new_size);
+
+    if (new_size < old_size) {
+        mem_copy(new_block, ptr, new_size);
+    }
+
+    else {
+        mem_copy(new_block, ptr, old_size);
+    }
+    free(ptr);
+    return new_block;
 }
 
 #ifndef TESTING
